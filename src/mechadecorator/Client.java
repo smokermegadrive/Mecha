@@ -46,6 +46,11 @@ public class Client {
        
        System.out.println("Escriba su nombre");
        String nombre = br.readLine();
+       
+       while (nombre.equals("")) {
+           System.out.println("Escribi un Nombre conchudo");
+           nombre = br.readLine();
+       } 
        mecha.setName(nombre);
        
        while (mecha.estasVivo() && mecha2.estasVivo()) {
