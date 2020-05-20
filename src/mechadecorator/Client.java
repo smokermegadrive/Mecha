@@ -5,6 +5,8 @@
  */
 package mechadecorator;
 
+import java.util.Random;
+
 /**
  *
  * @author Smoker
@@ -22,8 +24,12 @@ public class Client {
         
         Mecha fullpower = new SuperDekka(new Sword(new Wings(new Base())));
         fullpower.equip();*/
+       String [] arr = {"SCOPEDOG", "NINJA", "HEAVY"};
+       Random random = new Random();
+       int select = random.nextInt(arr.length);
+       
        Mecha mecha = MechaFactory.createMecha("SCOPEDOG");
-       Mecha mecha2 = MechaFactory.createMecha("NINJA");
+       Mecha mecha2 = MechaFactory.createMecha(arr[select]);
        while (mecha.estasVivo() && mecha2.estasVivo()) {
         mecha.atacar(mecha2);
         System.out.println(mecha2.getName() + " Hp: " + mecha2.getHp());
