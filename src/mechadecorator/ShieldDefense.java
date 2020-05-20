@@ -12,8 +12,9 @@ package mechadecorator;
 public class ShieldDefense implements IDefense {
     @Override
     public int defend(int damage) {
-        return damage - this.def();
+        return Math.max(0, damage - this.def());
     }
+
     @Override
     public int def() {
         return 10;
