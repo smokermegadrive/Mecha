@@ -33,31 +33,34 @@ public class Client {
             if (mecha2.estasVivo()) {
                 mecha2.atacar(mecha);
                 System.out.println(mecha.getName() + " Hp: " + mecha.getHp());
-            }
-            System.out.println("Seleccione Ataque: 1-Punch, 2-Sword, 3-Super Deka");
-            String ataque = br.readLine();
-
-            boolean lel = false;
-
-            do {
-                switch (ataque) {
-                    case "1":
-                        mecha.setAttack(new PunchAttack());
-                        lel = true;
-                        break;
-                    case "2":
-                        mecha.setAttack(new SwordAttack());
-                        lel = true;
-                        break;
-                    case "3":
-                        mecha.setAttack(new SuperDekkaAttack());
-                        lel = true;
-                        break;
-                    default:
-                        System.out.println("Escriba del 1 al 3, Seleccione ataque valido");
-                        ataque = br.readLine();
                 }
-            } while (lel == false);
+            
+            if (mecha.estasVivo() && mecha2.estasVivo()) {
+                System.out.println("Seleccione Ataque: 1-Punch, 2-Sword, 3-Super Deka");
+                String ataque = br.readLine();
+
+                boolean lel = false;
+
+                do {
+                    switch (ataque) {
+                        case "1":
+                            mecha.setAttack(new PunchAttack());
+                            lel = true;
+                            break;
+                        case "2":
+                            mecha.setAttack(new SwordAttack());
+                            lel = true;
+                            break;
+                        case "3":
+                            mecha.setAttack(new SuperDekkaAttack());
+                            lel = true;
+                            break;
+                        default:
+                            System.out.println("Escriba del 1 al 3, Seleccione ataque valido");
+                            ataque = br.readLine();
+                    }
+                } while (lel == false);
+            }
         }
 
         if (!mecha.estasVivo()) {

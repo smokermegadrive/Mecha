@@ -17,6 +17,6 @@ public class NoDefense implements IDefense {
 
     @Override
     public int def() {
-        return 5;
+        return 3;
     }
 }

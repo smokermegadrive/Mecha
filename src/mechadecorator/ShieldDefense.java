@@ -17,6 +17,6 @@ public class ShieldDefense implements IDefense {
 
     @Override
     public int def() {
-        return 10;
+        return 5;
     }
 }

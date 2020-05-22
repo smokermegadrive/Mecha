@@ -17,6 +17,6 @@ public class BarrierDefense implements IDefense {
 
     @Override
     public int def() {
-        return 20;
+        return 10;
     }
 }

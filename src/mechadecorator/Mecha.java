@@ -35,7 +35,7 @@ public class Mecha {
     public void defender(int damage) {
         //this.defense.defend(damage);
         int damaje = this.defense.defend(damage);
-        this.setHp(this.hp - damaje);
+        this.setHp(Math.max(0, this.hp - damaje));
         System.out.println(this.name + " recibio: " + damaje);
     }
     
