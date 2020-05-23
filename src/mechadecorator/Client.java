@@ -73,9 +73,9 @@ public class Client {
     }
 
     private static Mecha createPlayerMecha() throws IOException {
-        String[] arr = { "SCOPEDOG", "NINJA", "HEAVY" };
+        String[] arr = { "1", "2", "3" };
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Escriba tipo de mecha");
+        System.out.println("Seleccione un tipo de Mecha: 1-Heavy, 2-Ninja, 3-Scopedog");
         String tipo = br.readLine();
 
         while (tipo.equals("") || !Arrays.asList(arr).contains(tipo)) {
