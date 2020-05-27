@@ -36,7 +36,10 @@ public class Mecha {
         //this.defense.defend(damage);
         int damaje = this.defense.defend(damage);
         this.setHp(Math.max(0, this.hp - damaje));
+        
+        if (damaje > 0) {
         System.out.println(this.name + " recibio: " + damaje);
+        }
     }
     
     //--------------------------------------------------------------------------

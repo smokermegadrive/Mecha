@@ -5,6 +5,8 @@
  */
 package mechadecorator;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author Smoker
@@ -12,6 +14,13 @@ package mechadecorator;
 public class BarrierDefense implements IDefense {
     @Override
     public int defend(int damage) {
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+        
+        if (randomNum <= 2) {
+            System.out.println("Barrera absorbio el ataque");
+            return 0;
+        }
+        
         return Math.max(0, damage - this.def());
     }
 
