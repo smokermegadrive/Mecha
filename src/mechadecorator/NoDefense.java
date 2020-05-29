@@ -28,4 +28,9 @@ public class NoDefense implements IDefense {
     public int def() {
         return 3;
     }
+    
+    @Override
+    public String toString() {
+        return "Nada";
+    }
 }

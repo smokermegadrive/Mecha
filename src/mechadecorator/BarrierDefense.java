@@ -28,4 +28,9 @@ public class BarrierDefense implements IDefense {
     public int def() {
         return 10;
     }
+    
+    @Override
+    public String toString() {
+        return "Barrera";
+    }
 }

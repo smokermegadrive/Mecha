@@ -30,4 +30,8 @@ public class SwordAttack implements IAttack {
         return attk;
     }
     
+    @Override
+    public String toString() {
+        return "Vardios Punch";
+    }
 }

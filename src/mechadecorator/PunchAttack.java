@@ -30,4 +30,8 @@ public class PunchAttack implements IAttack {
         }
         return attk;
     }
+    @Override
+    public String toString() {
+        return "Vardios Slash";
+    }
 }
