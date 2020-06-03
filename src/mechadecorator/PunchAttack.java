@@ -17,10 +17,11 @@ public class PunchAttack implements IAttack {
     @Override
     public void attack(Mecha enemigo) {
         System.out.println("Vardios Punch");
-        if (enemigo.hp <= 45 && attk == 10) {
-            this.attk = attk + 5;
+        if (enemigo.hp <= 100) {
+          enemigo.defender((int) Math.round(this.atk() * 2));
+        } else {
+          enemigo.defender(this.atk());
         }
-        enemigo.defender(this.atk());
     }
    
     @Override
