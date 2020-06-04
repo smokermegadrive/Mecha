@@ -23,7 +23,7 @@ public class SwordAttack implements IAttack {
     public int atk() {
         int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
         
-        if (randomNum <= 35) {
+        if (randomNum <= 25) {
             System.out.println("Critical Hit");
             return attk * 2;
         }

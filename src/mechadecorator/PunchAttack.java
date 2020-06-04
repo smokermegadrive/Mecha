@@ -12,6 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author Smoker
  */
 public class PunchAttack implements IAttack {
+    int attk = 20;
     
     @Override
     public void attack(Mecha enemigo) {
@@ -21,7 +22,14 @@ public class PunchAttack implements IAttack {
    
     @Override
     public int atk() {
-        return 10;
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+        
+        if (randomNum <= 5) {
+            System.out.println("Critical Hit");
+            return attk * 2;
+        }
+        
+        return attk;
     }
     @Override
     public String toString() {
