@@ -5,20 +5,34 @@
  */
 package mechadecorator;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author Smoker
  */
 public class SuperDekkaAttack implements IAttack {
+    int attk = 20;
     
     @Override
     public void attack(Mecha enemigo) {
         System.out.println("Super Dekka Shoot");
-        enemigo.defender(this.atk());
+        if (enemigo.hp <= 45) {
+          enemigo.defender((int) Math.round(this.atk() * 2));
+        } else {
+          enemigo.defender(this.atk());
+        }
     }
     @Override
-    public int atk() {
-        return 20;
+       public int atk() {
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+        
+        if (randomNum <= 25) {
+            System.out.println("Critical Hit");
+            return attk * 2;
+        }
+        
+        return attk;
     }
     
     @Override
